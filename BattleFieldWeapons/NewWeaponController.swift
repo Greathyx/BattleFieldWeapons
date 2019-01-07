@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVKit
 
 class NewWeaponController: UITableViewController {
     
@@ -19,7 +20,11 @@ class NewWeaponController: UITableViewController {
     var origin = [Origin]()
     var specs : WeaponSpecs!
     
-
+    @IBOutlet weak var bgImageView: UIImageView!
+    @IBOutlet weak var playBtn: UIButton!
+    var videoUrl: URL!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,7 +53,18 @@ class NewWeaponController: UITableViewController {
             print("Decode error: ", error)
         }
     }
-
+    
+    
+    @IBAction func playVideo(_ sender: Any) {
+        
+        let playerVC = AVPlayerViewController()
+        playerVC.player = AVPlayer(url: videoUrl)
+        
+        self.present(playerVC, animated: true) {
+            playerVC.player?.play()
+        }
+    }
+    
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -14,13 +14,13 @@
         <!--绝地求生武器库-->
         <scene sceneID="DqE-e2-xwR">
             <objects>
-                <tableViewController id="wK8-N8-6pk" customClass="WeaponsTableViewController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="wK8-N8-6pk" customClass="WeaponsTableViewController" customModule="BattleFieldWeapons" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="500" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Zo5-zG-nXb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" id="3yz-5o-1ZA" customClass="CardCell" customModule="HelloWorld" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardCell" id="3yz-5o-1ZA" customClass="CardCell" customModule="BattleFieldWeapons" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="500"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3yz-5o-1ZA" id="muh-ix-4Aj">
@@ -169,7 +169,7 @@
         <!--New-->
         <scene sceneID="9F9-db-JrR">
             <objects>
-                <tableViewController id="nnc-b5-wIQ" customClass="NewWeaponController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="nnc-b5-wIQ" customClass="NewWeaponController" customModule="BattleFieldWeapons" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Cuf-d8-9af">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,14 +187,27 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gun-placeholder2" translatesAutoresizingMaskIntoConstraints="NO" id="W2c-RE-xVs">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
                                                 </imageView>
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWR-tO-Rvz">
+                                                    <rect key="frame" x="157" y="50" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="100" id="4vC-fL-4fH"/>
+                                                        <constraint firstAttribute="width" constant="100" id="fgc-vo-HAE"/>
+                                                    </constraints>
+                                                    <state key="normal" image="play"/>
+                                                    <connections>
+                                                        <action selector="playVideo:" destination="nnc-b5-wIQ" eventType="touchUpInside" id="yhY-XN-F4O"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="gWR-tO-Rvz" firstAttribute="centerX" secondItem="DJL-Pt-yul" secondAttribute="centerX" id="2Wn-xf-36f"/>
                                                 <constraint firstItem="W2c-RE-xVs" firstAttribute="centerX" secondItem="DJL-Pt-yul" secondAttribute="centerX" id="5Zm-Xz-1h1"/>
                                                 <constraint firstAttribute="bottom" secondItem="W2c-RE-xVs" secondAttribute="bottom" id="CDC-NG-Vqv"/>
                                                 <constraint firstItem="W2c-RE-xVs" firstAttribute="centerY" secondItem="DJL-Pt-yul" secondAttribute="centerY" id="KFY-0i-Ahe"/>
                                                 <constraint firstItem="W2c-RE-xVs" firstAttribute="leading" secondItem="DJL-Pt-yul" secondAttribute="leading" id="ap6-Sy-Odk"/>
                                                 <constraint firstItem="W2c-RE-xVs" firstAttribute="top" secondItem="DJL-Pt-yul" secondAttribute="top" id="d3h-My-Tko"/>
                                                 <constraint firstAttribute="trailing" secondItem="W2c-RE-xVs" secondAttribute="trailing" id="gFv-WP-c2A"/>
+                                                <constraint firstItem="gWR-tO-Rvz" firstAttribute="centerY" secondItem="DJL-Pt-yul" secondAttribute="centerY" id="gYU-x3-OCu"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -405,18 +418,20 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1200"/>
                     <connections>
+                        <outlet property="bgImageView" destination="W2c-RE-xVs" id="23B-JD-N3B"/>
+                        <outlet property="playBtn" destination="gWR-tO-Rvz" id="xUD-5y-ksL"/>
                         <outlet property="textFieldMv" destination="Wpn-sL-4Xh" id="Alp-uF-oom"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pfS-7x-iFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="0MQ-cW-iwx" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1739" y="790"/>
+            <point key="canvasLocation" x="1737.68115942029" y="789.50892857142856"/>
         </scene>
         <!--Detail Controller-->
         <scene sceneID="RmQ-Y2-Fim">
             <objects>
-                <tableViewController id="Kk5-NF-ZyJ" customClass="DetailController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Kk5-NF-ZyJ" customClass="DetailController" customModule="BattleFieldWeapons" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LnR-7S-eCV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,7 +469,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="iVg-z2-HYz" customClass="DetailCell" customModule="HelloWorld" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="iVg-z2-HYz" customClass="DetailCell" customModule="BattleFieldWeapons" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="328" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iVg-z2-HYz" id="q2c-s3-tyJ">
@@ -510,7 +525,7 @@
         <!--Rate Controller-->
         <scene sceneID="Y3Y-vb-k2x">
             <objects>
-                <viewController id="PR6-Mq-67G" customClass="RateController" customModule="HelloWorld" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PR6-Mq-67G" customClass="RateController" customModule="BattleFieldWeapons" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kqy-dc-I5E" userLabel="Footer View">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,6 +681,7 @@
     <resources>
         <image name="back" width="197" height="128"/>
         <image name="gun-placeholder2" width="1440" height="960"/>
+        <image name="play" width="48" height="48"/>
         <image name="unfav" width="24" height="24"/>
         <namedColor name="theme">
             <color red="0.0" green="0.58823529411764708" blue="0.53333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

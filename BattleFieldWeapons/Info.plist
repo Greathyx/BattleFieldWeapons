@@ -34,6 +34,12 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>visit your photos</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>use your microphone to record a video</string>
+	<key>NSCameraUsageDescription</key>
+	<string>use your camera to take a photo</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
