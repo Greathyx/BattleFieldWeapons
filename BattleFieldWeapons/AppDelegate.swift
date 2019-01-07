@@ -1,9 +1,9 @@
 //
 //  AppDelegate.swift
-//  BattleFieldWeapons
+//  HelloWorld
 //
-//  Created by 黄小白 on 2019/1/7.
-//  Copyright © 2019 Sherley Huang's studio. All rights reserved.
+//  Created by 黄小白 on 2018/12/20.
+//  Copyright © 2018 Sherley Huang's studio. All rights reserved.
 //
 
 import UIKit
@@ -16,6 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+//        UIApplication.shared.statusBarStyle = .lightContent
+        
         return true
     }
 
