@@ -21,8 +21,10 @@ class DetailController: UITableViewController {
         headerImageView.image = UIImage(named: weapon.image)
         navigationItem.largeTitleDisplayMode = .never
         
+        // 设置导航条背景透明
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
+        // 设置导航条字体颜色为主题色
         navigationController?.navigationBar.tintColor = UIColor(named: "theme")
         
         // 重新定义table header
